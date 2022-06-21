@@ -6,9 +6,9 @@ use App\Models\Evento;
 use App\Models\Investigador;
 use App\Models\Publicacion;
 use Illuminate\Http\Request;
-use ProtoneMedia\LaravelCrossEloquentSearch\Search;
 
 
+use function PHPUnit\Framework\isEmpty;
 
 class BusquedaController extends Controller
 {
@@ -24,19 +24,35 @@ class BusquedaController extends Controller
         $busqueda = $request->get('search');
         $i = 0;
         $resultados = [];
-        $resultadosBusqueda = Search::addMany([
-            [Evento::class,['titulo','descripcion']],
-            [Investigador::class,['nombre','apellido','grado']],
-            [Publicacion::class,['titulo','descripcion']]
-        ])
-        ->beginWithWildcard()
-        ->paginate()
-        ->search($busqueda);
+        $resultadosBusqueda = collect([]);
+
+        $eventos = Evento::search($busqueda)->where('activo',1)->paginate();
+        $publicaciones = Publicacion::search($busqueda)->where('activo',1)->paginate();
+        $investigadores = Investigador::search($busqueda)->where('activo',1)->paginate();
+        
+
+        if($eventos->isNotEmpty()){
+            $resultadosBusqueda = $eventos;
+        }
+        if($publicaciones->isNotEmpty()){
+            if($resultadosBusqueda->isNotEmpty()){
+                $resultadosBusqueda = $resultadosBusqueda->concat($publicaciones);
+            }else{
+                $resultadosBusqueda = collect($publicaciones);
+            }
+        }
+        if($investigadores->isNotEmpty()){
+            if($resultadosBusqueda->isNotEmpty()){
+                $resultadosBusqueda = $resultadosBusqueda->concat($investigadores);
+            }else{
+                $resultadosBusqueda = collect($investigadores);
+            }
+        }
 
         foreach($resultadosBusqueda as $resultado){
             
-
-            $id = $resultado->id;
+            if($resultado){
+                $id = $resultado->id;
             $titulo = class_basename($resultado) == 'Investigador' ? $resultado->grado.' '.$resultado->nombre.' '.$resultado->apellido : $resultado->titulo;
             $descripcion = class_basename($resultado) == 'Investigador' ? strip_tags($resultado->publicaciones) : strip_tags($resultado->descripcion);
             $descripcionforSubstr = strtolower($descripcion);
@@ -87,6 +103,9 @@ class BusquedaController extends Controller
 
             $i++;
 
+            }
+            
+
             
         }
 
@@ -97,7 +116,6 @@ class BusquedaController extends Controller
         }else{
             return view('layouts.plantilla');
         }
-        // return $resultados;
     }
 }
 

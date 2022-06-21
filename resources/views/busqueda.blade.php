@@ -11,9 +11,9 @@
             </div>
         </div>
     @endforeach
-    <div class="d-flex">
+    {{-- <div class="d-flex">
         {!! $resultadosBusqueda->links() !!}
-    </div>
+    </div> --}}
 
 </div>
 

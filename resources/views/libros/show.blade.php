@@ -6,7 +6,10 @@
 </div>
 <h3 class="text-center">{{$libro->titulo}}</h3>
 <div class="container w-50">
-    <p>{!!$libro->descripcion!!}</p>
+    <div class="row">
+
+        <p>{!!$libro->descripcion!!}</p>
+    </div>
     <div class="row">
         <div class="col-md-12">
             @if($archivos)
