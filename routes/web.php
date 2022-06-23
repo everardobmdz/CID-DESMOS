@@ -11,6 +11,7 @@ use App\Http\Controllers\DivulgacionController;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\QuienesSomosController;
+use App\Http\Controllers\UserContoller;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Investigador;
 use App\Models\Publicacion;
@@ -54,6 +55,7 @@ Route::get('/articulos/indexAdmin',[ArticuloController::class,'indexAdmin'])->na
 Route::get('/divulgaciones/indexAdmin',[DivulgacionController::class,'indexAdmin'])->name('divulgaciones.indexAdmin');
 Route::get('/quienes-somos/indexAdmin',[QuienesSomosController::class,'indexAdmin'])->name('quienes-somos.indexAdmin');
 Route::get('/contactos/indexAdmin',[ContactoController::class,'indexAdmin'])->name('contactos.indexAdmin');
+Route::get('/usuarios/indexAdmin',[UserContoller::class,'indexAdmin'])->name('usuarios.indexAdmin');
 
 
 
@@ -72,6 +74,7 @@ Route::resource('busqueda',BusquedaController::class);
 Route::resource('quienes-somos',QuienesSomosController::class);
 Route::resource('contactos',ContactoController::class);
 Route::resource('archivos',ArchivoController::class);
+Route::resource('usuarios',UserContoller::class);
 
 
 Route::get('eventos/{evento}',[EventoController::class,'show'])->name('eventos.show'); 
@@ -137,10 +140,10 @@ Route::get('/delete-contacto/{contacto_id}', array(
     'middleware' => 'auth',
     'uses' => 'App\Http\Controllers\ContactoController@delete_contacto'
 ));
-Route::get('/delete-archivo/{archivo_id}', array(
-    'as' => 'delete-archivo',
+Route::get('/delete-usuario/{usuario_id}', array(
+    'as' => 'delete-usuario',
     'middleware' => 'auth',
-    'uses' => 'App\Http\Controllers\ArchivoController@delete_archivo'
+    'uses' => 'App\Http\Controllers\UserController@delete_usuario'
 ));
 Route::get('/files/{filename}', array(
     'as' => 'files',

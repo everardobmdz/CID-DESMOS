@@ -119,6 +119,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 ">
+                                        <div class="card card-stats ">
+                                            <div class="card-header card-header-info card-header-icon">
+                                                <div class="card-icon">
+                                                <i class="material-icons">group</i>
+                                                </div>
+                                                <h3 class="card-title">Usuarios</h3>
+                                                <a class="btn btn-outline-success mb-2" href="{{route("usuarios.create")}}">Registrar usuarios</a>
+                                                <a class="btn btn-outline-danger mb-2" href="{{route("usuarios.indexAdmin")}}">Consultar usuarios</a>
+                                            </div>
+                                            <div class="card-footer p-2">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
 
                         
                                 {{-- <div class="col-lg-4 col-md-6 col-sm-12">
