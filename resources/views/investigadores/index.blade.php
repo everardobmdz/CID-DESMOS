@@ -38,9 +38,7 @@
     
         </div>
     @endforeach
-    <div class="d-flex">
-        {!! $investigadores->links() !!}
-    </div>
+    {{ $investigadores->links('pagination::bootstrap-4') }}
 </div>
 @endsection
 

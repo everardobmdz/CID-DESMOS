@@ -10,7 +10,7 @@
     @foreach($libros->chunk(4) as $chunk)
         <div class="row">
             @foreach($chunk as $libro)
-                <div class="col-md-3 ">
+                <div class="col-md-3 publicaciones">
                     <div class="p-2 w-100 h-100 libro-card">
                         <h6 class="text-center" style="color: #b03124">{{$libro->titulo}}</h6>
                         <p>{!!strip_tags($libro->descripcion)!!}</p>
@@ -24,7 +24,7 @@
         </div>
     @endforeach
     <div class="d-flex">
-        {!! $libros->links() !!}
+        {!! $libros->links('paginate::bootstrap-4') !!}
     </div>
 </div>
 
@@ -47,7 +47,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                              @if($libro->archivos()->where('activo',1)->get())
+                              @if($libro->archivos()->where('activo',1)->get()->isNotEmpty())
                                     <h5><b>Archivos adjuntos</b></h5>
                                 @endif
                                 @foreach($libro->archivos()->where('activo',1)->get() as $archivo)

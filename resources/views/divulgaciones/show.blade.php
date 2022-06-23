@@ -28,7 +28,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                @if($archivos)
+                @if($archivos->isNotEmpty())
                     <h5><b>Archivos adjuntos</b></h5>
                 @endif
                 @foreach($archivos as $archivo)

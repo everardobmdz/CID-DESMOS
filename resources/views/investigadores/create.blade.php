@@ -97,18 +97,20 @@
 
                         </div>
                         <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="containerImgCreate">
-                                    <img id="createInvesPic" src="../../public/images/defaultPicture.png">
-
-                                </div>
-                            </div>
+                            
                             <div class="col-md-6">
                                 <label class="font-weight-bold" for="imagen">Imagen</label>
                                 <div class="custom-file">
                                     <input name="imagen" type="file" class="custom-file-input" id="customFileLang" accept="image/*"
                                            lang="es">
                                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="containerImgCreate">
+                                    <img id="createInvesPic" src="../../public/images/defaultPicture.png">
+
                                 </div>
                             </div>
 

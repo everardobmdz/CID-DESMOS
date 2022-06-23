@@ -20,7 +20,7 @@ class EventoController extends Controller
     public function index()
     { 
         
-        $eventos = Evento::where('activo','=',1)->orderBy('fecha','desc')->paginate(3);
+        $eventos = Evento::where('activo','=',1)->orderBy('fecha','desc')->paginate(8);
         return view('eventos.index',compact('eventos'));
     }
 

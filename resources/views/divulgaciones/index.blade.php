@@ -7,7 +7,7 @@
             <h2 class="mb-4">Divulgación</h2>
         </div>
     </div>
-    @foreach($divulgaciones->chunk(4) as $chunk)
+    @foreach($divulgaciones->chunk(3) as $chunk)
         <div class="row post-columns">
             @foreach($chunk as $divulgacion)
             <div class="col-sm-6 col-md-4 col-lg-4">
@@ -37,7 +37,7 @@
         </div>
     @endforeach
     <div class="d-flex">
-        {!! $divulgaciones->links() !!}
+        {!! $divulgaciones->links('pagination::bootstrap-4') !!}
     </div>
 </div>
 

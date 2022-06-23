@@ -64,25 +64,29 @@
                             </div>
                             
                         </div>
+                        
                         <br>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <label class="font-weight-bold" for="files[]">Archivos </label>
-                                <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>
-                            </div>
-                            
-                        </div>
-                        <br>
-                        <h2>Archivos</h2>
+                        @if($archivos->isNotEmpty())
+                            <h2>Archivos</h2>
+                        @endif
                         @foreach($archivos as $archivo)
                             <div class="file">
                                 <a target="_blank" href="{{url('storage/files/'.$archivo->path)}}">{{$archivo->path}}</a><a href="{{ route('delete-archivo',$archivo->id) }}" class="delete-file btn btn-danger m-2">x</a>
                             </div>
 
                         @endforeach
-
+                        <br>
 
                         <div class="row align-items-center">
+                            
+                            <div class="col-md-6">
+                                <label class="font-weight-bold" for="imagen">Imagen</label>
+                                <div class="custom-file">
+                                    <input name="imagen" type="file" class="custom-file-input" id="customFileLang" accept="image/*"
+                                           lang="es">
+                                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="containerImgCreate">
                                     @if(Storage::disk('images-eventos')->has($evento->image))
@@ -93,15 +97,15 @@
 
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <label class="font-weight-bold" for="imagen">Imagen</label>
-                                <div class="custom-file">
-                                    <input name="imagen" type="file" class="custom-file-input" id="customFileLang" accept="image/*"
-                                           lang="es">
-                                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-                                </div>
-                            </div>
 
+                        </div>
+                        <br>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <label class="font-weight-bold" for="files[]">Archivos </label>
+                                <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>
+                            </div>
+                            
                         </div>
                         
                         <br>

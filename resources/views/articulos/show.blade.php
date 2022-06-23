@@ -9,14 +9,13 @@
     <p>{!!$articulo->descripcion!!}</p>
     <div class="row">
         <div class="col-md-12">
-            @if($archivos)
+            @if($archivos->isNotEmpty())
                 <h5><b>Archivos adjuntos</b></h5>
             @endif
             @foreach($archivos as $archivo)
                     <div class="file mb-1">
                         <a target="_blank" href="{{url('storage/files/'.$archivo->path)}}">{{$archivo->path}}</a>
                     </div>
-
             @endforeach
         </div>
     </div>

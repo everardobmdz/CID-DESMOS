@@ -20,7 +20,7 @@
                 </a>
             </div>
             <div class="col-md-12">
-                @if($evento->archivos)
+                @if($archivos->isNotEmpty())
                     <h5><b>Archivos adjuntos</b></h5>
                 @endif
                 @foreach($archivos as $archivo)
@@ -47,9 +47,6 @@
         </div>
         <div class="modal-body">
             <img src="{{url('/storage/images/eventos/'.$evento->image)}}">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>

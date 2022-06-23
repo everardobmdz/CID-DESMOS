@@ -54,23 +54,11 @@
                             </div>
                             
                         </div>
-                        <br>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <label class="font-weight-bold" for="files[]">Archivos </label>
-                                <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>
-                            </div>
-                            
-                        </div>
+                        
                         <br>
                         
                         <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="containerImgCreate">
-                                    <img id="createInvesPic" src="../../public/images/defaultPicture.png">
-
-                                </div>
-                            </div>
+                            
                             <div class="col-md-6">
                                 <label class="font-weight-bold" for="imagen">Imagen</label>
                                 <div class="custom-file">
@@ -79,7 +67,21 @@
                                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="containerImgCreate">
+                                    <img id="createInvesPic" src="../../public/images/defaultPicture.png">
 
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <label class="font-weight-bold" for="files[]">Archivos </label>
+                                <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>
+                            </div>
+                            
                         </div>
                         
                         <br>

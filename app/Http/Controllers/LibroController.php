@@ -16,7 +16,7 @@ class LibroController extends Controller
      */
     public function index()
     {
-        $libros = Publicacion::where('activo','=',1)->where('categoria','=',1)->orderBy('titulo','desc')->paginate(10);
+        $libros = Publicacion::where('activo','=',1)->where('categoria','=',1)->orderBy('titulo','desc')->paginate(16);
 
 
         return view('libros.index',compact('libros'));

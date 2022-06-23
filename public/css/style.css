@@ -785,7 +785,7 @@ svg {
 	Team
 --------------------------------------------------------------*/
 #publicaciones{
-  height: 420px;
+  height: 450px;
 }  
 .publicaciones-item {
     text-align: center;
@@ -811,7 +811,8 @@ svg {
     left: 0;
     right: 0;
     font-size: 2em;
-    text-shadow: 0px 2px 2px rgb(0, 0, 0)
+    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    margin-bottom: 1em;
 }
 
 .u-non-blurred {
@@ -972,6 +973,9 @@ svg {
   align-items: center;
 }
 /*Libros y capitulos*/
+.publicaciones{
+  margin-bottom: 1em;
+}
 .libro-card{
   height: 200px;
   overflow: hidden;

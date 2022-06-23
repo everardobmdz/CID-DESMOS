@@ -17,7 +17,7 @@ class InvestigadorController extends Controller
     public function index()
     {
         
-        $investigadores = Investigador::where('activo','=',1)->orderBy('apellido','asc')->paginate(15);
+        $investigadores = Investigador::where('activo','=',1)->orderBy('apellido','asc')->paginate(12);
         return view('investigadores.index',compact('investigadores'));
     }
     public function indexAdmin()

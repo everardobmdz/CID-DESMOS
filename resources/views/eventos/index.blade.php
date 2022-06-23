@@ -13,8 +13,8 @@
                         $date = new DateTime(explode(" ", $evento->fecha)[0]);
                         $dateFormated = $date->getTimestamp();
                         
-                        setlocale(LC_TIME,'esm.UTF-8');
-                        echo strftime("%A, %d de %B de %Y", $dateFormated)
+                        $loc_de = setlocale(LC_TIME,'esm.UTF-8','es','spa','es_MX','es_MX.utf8','Spanish_Mexico.utf8');
+                        echo strftime("%A, %d de %B de %Y", $dateFormated);
                         
                     ?>
                 </h4>
@@ -26,7 +26,7 @@
         @endforeach
 
         <div class="d-flex">
-            {!! $eventos->links() !!}
+            {!! $eventos->links('pagination::bootstrap-4') !!}
         </div>
     </div>
 @endsection

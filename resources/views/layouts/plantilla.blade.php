@@ -59,7 +59,7 @@
         <div class="loader">Loading...</div>
     </div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" role="navigation">
-        <a class="navbar-brand" href="https://www.udg.mx"><img class="img-fluid" src="{{asset('/images/logoUDG.png')}}" width="212" height="auto"></a>
+        <a class="navbar-brand" target="_blank" href="http://www.cucsh.udg.mx"><img class="img-fluid" src="{{asset('/images/cucsh.png')}}" width="100" height="auto"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -126,7 +126,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p class="copyright font-alt"><a href="index.html">Universidad de Guadalajara</a></p>
+                    <p class="copyright font-alt"><a target="_blank" href="https://www.udg.mx">Universidad de Guadalajara</a></p>
                 </div>
                 
             </div>

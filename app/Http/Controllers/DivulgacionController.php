@@ -18,7 +18,7 @@ class DivulgacionController extends Controller
      */
     public function index()
     {
-        $divulgaciones = Publicacion::where("activo",'=',1)->where('categoria','=',3)->orderBy('titulo','desc')->paginate(10);
+        $divulgaciones = Publicacion::where("activo",'=',1)->where('categoria','=',3)->orderBy('titulo','desc')->paginate(9);
         return view('divulgaciones.index',compact('divulgaciones'));
     }
     public function indexAdmin()

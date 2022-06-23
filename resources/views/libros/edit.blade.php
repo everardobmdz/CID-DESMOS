@@ -64,7 +64,9 @@
                             
                         </div>
                         <br>
-                        <h2>Archivos</h2>
+                        @if($archivos->isNotEmpty())
+                            <h2>Archivos</h2>
+                        @endif
                         @foreach($archivos as $archivo)
                             <div class="file">
                                 <a target="_blank" href="{{url('storage/files/'.$archivo->path)}}">{{$archivo->path}}</a><a href="{{ route('delete-archivo',$archivo->id) }}" class="delete-file btn btn-danger m-2">x</a>

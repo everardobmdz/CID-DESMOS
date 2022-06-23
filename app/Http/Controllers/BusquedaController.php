@@ -26,9 +26,9 @@ class BusquedaController extends Controller
         $resultados = [];
         $resultadosBusqueda = collect([]);
 
-        $eventos = Evento::search($busqueda)->where('activo',1)->paginate();
-        $publicaciones = Publicacion::search($busqueda)->where('activo',1)->paginate();
-        $investigadores = Investigador::search($busqueda)->where('activo',1)->paginate();
+        $eventos = Evento::search($busqueda)->where('activo',1)->get();
+        $publicaciones = Publicacion::search($busqueda)->where('activo',1)->get();
+        $investigadores = Investigador::search($busqueda)->where('activo',1)->get();
         
 
         if($eventos->isNotEmpty()){
@@ -48,60 +48,62 @@ class BusquedaController extends Controller
                 $resultadosBusqueda = collect($investigadores);
             }
         }
+        
+
 
         foreach($resultadosBusqueda as $resultado){
             
             if($resultado){
                 $id = $resultado->id;
-            $titulo = class_basename($resultado) == 'Investigador' ? $resultado->grado.' '.$resultado->nombre.' '.$resultado->apellido : $resultado->titulo;
-            $descripcion = class_basename($resultado) == 'Investigador' ? strip_tags($resultado->publicaciones) : strip_tags($resultado->descripcion);
-            $descripcionforSubstr = strtolower($descripcion);
-            $descripcionforSubstr = str_replace(
-                array('á', 'é', 'í', 'ó', 'ú'),
-                array('a', 'e', 'i', 'o', 'u'),
-                $descripcionforSubstr
-            );
-            $busquedaReplace = str_replace(
-                array('á', 'é', 'í', 'ó', 'ú'),
-                array('a', 'e', 'i', 'o', 'u'),
-                $busqueda
-            );
-            $busquedaReplace = strtolower($busquedaReplace);
-            $keywordPos = strpos($descripcionforSubstr, $busquedaReplace);
-            if($keywordPos > 0){
-                $descripcionKeyword = '...'.substr($descripcionforSubstr,$keywordPos-50,50).'<b>'.substr($descripcionforSubstr,$keywordPos,strlen($busquedaReplace)).'</b>'.substr($descripcionforSubstr,($keywordPos+strlen($busquedaReplace)),50).'...';
-            }elseif($keywordPos === 0){
-                $descripcionKeyword = '<b>'.substr($descripcionforSubstr,$keywordPos,strlen($busquedaReplace)).'</b>'.substr($descripcionforSubstr,($keywordPos+strlen($busquedaReplace)),50).'...';
-            }
-            else{
-                $descripcionKeyword = substr($descripcion,0,100).'...';
-            }
-
-            if(class_basename($resultado) == 'Investigador'){
-                $route = 'investigadores.show';
-            }elseif(class_basename($resultado) == 'Evento'){
-                $route = 'eventos.show';
-            }else{
-                if($resultado->categoria == 3)
-                    $route = 'divulgaciones.show';
-                elseif($resultado->categoria == 2){
-                    $route = 'articulos.show';
+                $titulo = class_basename($resultado) == 'Investigador' ? $resultado->grado.' '.$resultado->nombre.' '.$resultado->apellido : $resultado->titulo;
+                $descripcion = class_basename($resultado) == 'Investigador' ? strip_tags($resultado->publicaciones) : strip_tags($resultado->descripcion);
+                $descripcionforSubstr = strtolower($descripcion);
+                $descripcionforSubstr = str_replace(
+                    array('á', 'é', 'í', 'ó', 'ú'),
+                    array('a', 'e', 'i', 'o', 'u'),
+                    $descripcionforSubstr
+                );
+                $busquedaReplace = str_replace(
+                    array('á', 'é', 'í', 'ó', 'ú'),
+                    array('a', 'e', 'i', 'o', 'u'),
+                    $busqueda
+                );
+                $busquedaReplace = strtolower($busquedaReplace);
+                $keywordPos = strpos($descripcionforSubstr, $busquedaReplace);
+                if($keywordPos > 0){
+                    $descripcionKeyword = '...'.substr($descripcionforSubstr,$keywordPos-50,50).'<b>'.substr($descripcionforSubstr,$keywordPos,strlen($busquedaReplace)).'</b>'.substr($descripcionforSubstr,($keywordPos+strlen($busquedaReplace)),50).'...';
+                }elseif($keywordPos === 0){
+                    $descripcionKeyword = '<b>'.substr($descripcionforSubstr,$keywordPos,strlen($busquedaReplace)).'</b>'.substr($descripcionforSubstr,($keywordPos+strlen($busquedaReplace)),50).'...';
                 }
                 else{
-                    $route = 'libros.show';
+                    $descripcionKeyword = substr($descripcion,0,100).'...';
                 }
-            }
 
-            $resultados[''.$i] = [
-                'id'=>$id,
-                'titulo'=>$titulo,
-                'descripcion'=> $descripcionKeyword,
-                'route'=> $route,
-                'keywordpos'=>$keywordPos,
+                if(class_basename($resultado) == 'Investigador'){
+                    $route = 'investigadores.show';
+                }elseif(class_basename($resultado) == 'Evento'){
+                    $route = 'eventos.show';
+                }else{
+                    if($resultado->categoria == 3)
+                        $route = 'divulgaciones.show';
+                    elseif($resultado->categoria == 2){
+                        $route = 'articulos.show';
+                    }
+                    else{
+                        $route = 'libros.show';
+                    }
+                }
 
-            ];
+                $resultados[''.$i] = [
+                    'id'=>$id,
+                    'titulo'=>$titulo,
+                    'descripcion'=> $descripcionKeyword,
+                    'route'=> $route,
+                    'keywordpos'=>$keywordPos,
 
-            $i++;
+                ];
+
+                $i++;
 
             }
             
@@ -116,6 +118,8 @@ class BusquedaController extends Controller
         }else{
             return view('layouts.plantilla');
         }
+
+
     }
 }
 
