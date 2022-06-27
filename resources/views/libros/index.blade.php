@@ -24,7 +24,7 @@
         </div>
     @endforeach
     <div class="d-flex">
-        {!! $libros->links('paginate::bootstrap-4') !!}
+        {!! $libros->links('pagination::bootstrap-4') !!}
     </div>
 </div>
 
@@ -41,10 +41,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="informacionModal">
-                        <div class="modal-info--item">
-                            <b>Detalles del libro: </b>
-                            {!!$libro->descripcion!!}
-                        </div>
+                        @if($libro->image)
+                        <div class="row">
+                                <div class="modal-info--item col-md-6">
+                                    <b>Detalles del libro: </b>
+                                    {!!$libro->descripcion!!}
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                        <img src="{{url('/storage/images/publicaciones/'.$libro->image)}}"/>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        @else
+                            <div class="modal-info--item">
+                                <b>Detalles del libro: </b>
+                                {!!$libro->descripcion!!}
+                            </div>
+                        @endif
                         <div class="row">
                             <div class="col-md-12">
                               @if($libro->archivos()->where('activo',1)->get()->isNotEmpty())
