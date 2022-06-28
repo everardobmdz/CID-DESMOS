@@ -661,7 +661,7 @@ p, ol, ul, blockquote {
   margin: 0;
 }
 svg {
-  margin: -10px;
+  margin-bottom: -8px;
   margin-top: -150px;
 }
 .infoFooter {

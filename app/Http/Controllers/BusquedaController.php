@@ -21,9 +21,9 @@ class BusquedaController extends Controller
 
     public function index(Request $request)
     {
-        $busqueda = $request->get('search');
+        $busqueda = $request->search;
         $i = 0;
-        $resultados = [];
+        $resultados = collect([]);
         $resultadosBusqueda = collect([]);
 
         $eventos = Evento::search($busqueda)->where('activo',1)->get();
@@ -111,15 +111,18 @@ class BusquedaController extends Controller
             
         }
 
-        
+        $resultados = $resultados->paginate(15,$busqueda);
+
         if($busqueda){
 
-            return view('busqueda',compact('resultados','busqueda','resultadosBusqueda'));
+            return view('busqueda',compact('resultados','busqueda'));
         }else{
             return view('layouts.plantilla');
         }
+  
 
 
     }
+
 }
 
