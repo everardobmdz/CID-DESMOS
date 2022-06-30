@@ -55,7 +55,12 @@
                                 <textarea class="form-control" id="descripcion" name="descripcion">{{$libro->descripcion}}</textarea>
                             </div>
                         </div>
-                        <br>
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <label class="font-weight-bold" for="anio">Año* </label>
+                                <input value="{{$articulo->anio}}" type="text" class="form-control" id="anio" name="anio">
+                            </div>
+                        </div>
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <label class="font-weight-bold" for="files[]">Archivos </label>

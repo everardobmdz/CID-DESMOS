@@ -60,6 +60,10 @@
                                 {!!$libro->descripcion!!}
                             </div>
                         @endif
+                        <div class="modal-info--item">
+                            <b>Año: </b>
+                            {{$libro->anio}}
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                               @if($libro->archivos()->where('activo',1)->get()->isNotEmpty())

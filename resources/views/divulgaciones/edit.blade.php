@@ -47,6 +47,14 @@
                             <textarea class="form-control" id="descripcion" name="descripcion">{{$divulgacion->descripcion}}</textarea>
                         </div>
                     </div>
+                    <br>
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <label class="font-weight-bold" for="fecha">Fecha* </label>
+                            <input value="{{explode(" ",$evento->fecha)[0]}}" type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
+                        </div>
+                        
+                    </div>
 
                     <br>
                     <div class="row align-items-center mb-3">

@@ -56,6 +56,13 @@
                         </div>
                         <br>
                         <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <label class="font-weight-bold" for="anio">Año* </label>
+                                <input type="text" class="form-control" id="anio" name="anio" value="{{ old('anio') }}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row align-items-center">
                             <div class="col-md-6">
                                 <label class="font-weight-bold" for="files[]">Archivos </label>
                                 <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>

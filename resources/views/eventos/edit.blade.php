@@ -64,6 +64,14 @@
                             </div>
                             
                         </div>
+                        <br>
+                        <div class="row align-items-center form-check form-switch">
+                            <div class="col-md-12">
+
+                                <input name="is_solo_noticia" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @if($evento->is_solo_noticia)checked @endif>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar solamente en noticias</label>
+                            </div>
+                        </div>  
                         
                         <br>
                         @if($archivos->isNotEmpty())

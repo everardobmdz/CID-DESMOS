@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->string('categoria');
             $table->string('link')->nullable();
+            $table->datetime('fecha');
+
 
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class DivulgacionController extends Controller
      */
     public function index()
     {
-        $divulgaciones = Publicacion::where("activo",'=',1)->where('categoria','=',3)->orderBy('titulo','desc')->paginate(9);
+        $divulgaciones = Publicacion::where("activo",'=',1)->where('categoria','=',3)->orderBy('fecha','desc')->paginate(9);
         return view('divulgaciones.index',compact('divulgaciones'));
     }
     public function indexAdmin()
@@ -107,13 +107,15 @@ class DivulgacionController extends Controller
         $validateData = $this->validate($request,[
             'titulo'=>'required',
             'descripcion'=>'required',
-            'link'=>'required'
+            'link'=>'required',
+            'fecha'=>'required'
         ]);
 
         $divulgacion = new Publicacion();
 
         $divulgacion->titulo = $request->input('titulo');
         $divulgacion->descripcion = $request->input('descripcion');
+        $divulgacion->fecha = $request->input('fecha');
         $divulgacion->link = $request->input('link');
         $divulgacion->categoria = 3;
 
@@ -208,7 +210,8 @@ class DivulgacionController extends Controller
         $validateData = $this->validate($request,[
             'titulo'=>'required',
             'descripcion'=>'required',
-            'link'=>'required'
+            'link'=>'required',
+            'fecha'=>'required'
         ]);
 
         $divulgacion = Publicacion::find($id);
@@ -217,6 +220,7 @@ class DivulgacionController extends Controller
         $divulgacion->titulo = $request->input('titulo');
         $divulgacion->descripcion = $request->input('descripcion');
         $divulgacion->link = $request->input('link');
+        $divulgacion->fecha = $request->input('fecha');
         $divulgacion->categoria = 3;
 
         $divulgacion->update();

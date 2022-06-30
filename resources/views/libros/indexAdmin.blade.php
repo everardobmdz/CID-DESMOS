@@ -40,6 +40,7 @@
                     <th>Id Evento</th>
                     <th>Titulo</th>
                     <th>Descripcion</th>
+                    <th>Año</th>
 
 
                 </tr>

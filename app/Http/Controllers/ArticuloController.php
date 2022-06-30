@@ -18,7 +18,7 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $articulos = Publicacion::where('activo','=',1)->where('categoria','=',2)->orderBy('titulo','desc')->paginate(16);
+        $articulos = Publicacion::where('activo','=',1)->where('categoria','=',2)->orderBy('anio','desc')->paginate(16);
         return view('articulos.index',compact('articulos'));
     }
 

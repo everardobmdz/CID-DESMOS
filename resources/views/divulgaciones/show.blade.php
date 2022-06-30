@@ -5,6 +5,18 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center">{{$divulgacion->titulo}}</h1>
+                <h4>
+                    <?php
+                        $cola = "";
+                    
+                        $date = new DateTime(explode(" ", $divulgacion->fecha)[0]);
+                        $dateFormated = $date->getTimestamp();
+                        
+                        $loc_de = setlocale(LC_TIME,'esm.UTF-8','es','spa','es_MX','es_MX.utf8','Spanish_Mexico.utf8');
+                        echo strftime("%A, %d de %B de %Y", $dateFormated);
+                        
+                    ?>
+                </h4>
             </div>
         </div>
         <div class="row">

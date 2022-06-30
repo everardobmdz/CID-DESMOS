@@ -20,7 +20,7 @@ class EventoController extends Controller
     public function index()
     { 
         
-        $eventos = Evento::where('activo','=',1)->orderBy('fecha','desc')->paginate(8);
+        $eventos = Evento::where('activo','=',1)->where('is_solo_noticia','=',0)->orderBy('fecha','desc')->paginate(8);
         return view('eventos.index',compact('eventos'));
     }
 
@@ -119,6 +119,15 @@ class EventoController extends Controller
         $evento = new Evento();
         $evento->titulo = $request->input('titulo');
         $evento->descripcion = $request->input('descripcion');
+        if($request->input('is_solo_noticia')){
+
+            $evento->is_solo_noticia = 1;
+        }
+        else{
+            $evento->is_solo_noticia = 0;
+
+
+        }
 
         $evento->fecha = $request->input('fecha');
 
@@ -235,6 +244,16 @@ class EventoController extends Controller
         $evento->titulo = $request->input('titulo');
         $evento->descripcion = $request->input('descripcion');
         $evento->fecha = $request->input('fecha');
+        if($request->input('is_solo_noticia')){
+
+            $evento->is_solo_noticia = 1;
+        }
+        else{
+            $evento->is_solo_noticia = 0;
+
+
+        }
+
 
 
         $image = $request->file('imagen');

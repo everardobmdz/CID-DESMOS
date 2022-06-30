@@ -16,7 +16,7 @@ class LibroController extends Controller
      */
     public function index()
     {
-        $libros = Publicacion::where('activo','=',1)->where('categoria','=',1)->orderBy('titulo','desc')->paginate(16);
+        $libros = Publicacion::where('activo','=',1)->where('categoria','=',1)->orderBy('anio','desc')->paginate(16);
 
 
         return view('libros.index',compact('libros'));
@@ -78,6 +78,8 @@ class LibroController extends Controller
                 $value['id'],
                 $value['titulo'],
                 $value['descripcion'],
+                $value['anio'],
+
             );
 
         }
@@ -112,6 +114,7 @@ class LibroController extends Controller
         $libro = new Publicacion();
         $libro->titulo = $request->input('titulo');
         $libro->descripcion = $request->input('descripcion');
+        $libro->anio = $request->input('anio');
         $libro->categoria = 1;
 
 
@@ -210,6 +213,7 @@ class LibroController extends Controller
         $libro = Publicacion::find($id);
         $libro->titulo = $request->input('titulo');
         $libro->descripcion = $request->input('descripcion');
+        $libro->anio = $request->input('anio');
         $libro->categoria = 1;
 
 
