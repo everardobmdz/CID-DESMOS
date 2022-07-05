@@ -11,7 +11,7 @@ use App\Http\Controllers\DivulgacionController;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\QuienesSomosController;
-use App\Http\Controllers\UserContoller;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Investigador;
 use App\Models\Publicacion;
@@ -74,7 +74,7 @@ Route::resource('busqueda',BusquedaController::class);
 Route::resource('quienes-somos',QuienesSomosController::class);
 Route::resource('contactos',ContactoController::class);
 Route::resource('archivos',ArchivoController::class);
-Route::resource('usuarios',UserContoller::class);
+Route::resource('usuarios',UserController::class);
 
 
 Route::get('eventos/{evento}',[EventoController::class,'show'])->name('eventos.show'); 
