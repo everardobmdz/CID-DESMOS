@@ -55,8 +55,9 @@
     <div class="page-loader">
         <div class="loader">Loading...</div>
     </div>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" role="navigation">
-        <a class="navbar-brand" target="_blank" href="http://www.cucsh.udg.mx"><img class="img-fluid" src="{{asset('/images/cucsh.png')}}" width="100" height="auto"></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" role="navigation">
+        <a class="navbar-brand" target="_blank" href="http://www.cucsh.udg.mx"><img class="img-fluid" src="{{asset('/images/cucshBlanco.png')}}" width="100" height="auto"></a>
+        <a class="navbar-brand" target="_blank" href="{{asset('/')}}"><img class="img-fluid" src="{{asset('/images/logoDesmosBlanco.png')}}" width="100" height="auto"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -89,7 +90,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0" action="{{route('busqueda.index')}}" enctype="multipart/form-data">
                 <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" autocomplete="off">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <button class="btn bg-dark my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>

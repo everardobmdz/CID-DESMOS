@@ -151,11 +151,16 @@
 
         </section>
 
-        <section class="module-small bg-dark">
+        <section class="module-small">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="callout-btn-box"><a class="btn btn-w btn-round" href={{ route('investigadores.index') }} >Ver todos</a></div>
+                        <button class="button1">
+							<a href="{{route('investigadores.index')}}">
+								<span class="span1" style="font-size: 20px;">Ver más</span>
+								<div class="liquid1"></div>
+							</a>
+						</button>
                     </div>
                 </div>
             </div>
@@ -221,11 +226,16 @@
                 </div>
             </div>
         </section>
-        <section class="module-small bg-dark">
+        <section class="module-small bg-transparent">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="callout-btn-box"><a class="btn btn-w btn-round" href="{{route("divulgaciones.index")}}">Ver más</a></div>
+                        <button class="button1">
+							<a href="{{route('divulgaciones.index')}}">
+								<span class="span1" style="font-size: 20px;">Ver más</span>
+								<div class="liquid1"></div>
+							</a>
+						</button>
                     </div>
                 </div>
             </div>
