@@ -184,7 +184,7 @@ class ContactoController extends Controller
         
 
         $contacto->update();
-        return redirect()->route('contacto.indexAdmin')->with(array(
+        return redirect()->route('contactos.indexAdmin')->with(array(
             'message'=>'El contacto se actualizó correctamente'
         ));
     }

@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="fecha">Fecha* </label>
-                            <input value="{{explode(" ",$evento->fecha)[0]}}" type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
+                            <input value="{{explode(" ",$divulgacion->fecha)[0]}}" type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
                         </div>
                         
                     </div>

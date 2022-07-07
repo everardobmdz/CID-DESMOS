@@ -160,7 +160,7 @@ class DivulgacionController extends Controller
         //     $log->acciones = "Borrado";
         //     $log->save();
             //
-            return redirect()->route('divulgacion.indexAdmin')->with(array(
+            return redirect()->route('divulgaciones.indexAdmin')->with(array(
                "message" => "El post se ha eliminado correctamente"
             ));
         }else{

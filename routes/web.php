@@ -55,7 +55,7 @@ Route::get('/articulos/indexAdmin',[ArticuloController::class,'indexAdmin'])->na
 Route::get('/divulgaciones/indexAdmin',[DivulgacionController::class,'indexAdmin'])->name('divulgaciones.indexAdmin');
 Route::get('/quienes-somos/indexAdmin',[QuienesSomosController::class,'indexAdmin'])->name('quienes-somos.indexAdmin');
 Route::get('/contactos/indexAdmin',[ContactoController::class,'indexAdmin'])->name('contactos.indexAdmin');
-Route::get('/usuarios/indexAdmin',[UserContoller::class,'indexAdmin'])->name('usuarios.indexAdmin');
+Route::get('/usuarios/indexAdmin',[UserController::class,'indexAdmin'])->name('usuarios.indexAdmin');
 
 
 

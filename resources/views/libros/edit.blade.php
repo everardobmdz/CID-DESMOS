@@ -58,7 +58,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-3">
                                 <label class="font-weight-bold" for="anio">Año* </label>
-                                <input value="{{$articulo->anio}}" type="text" class="form-control" id="anio" name="anio">
+                                <input value="{{$libro->anio}}" type="text" class="form-control" id="anio" name="anio">
                             </div>
                         </div>
                         <div class="row align-items-center">

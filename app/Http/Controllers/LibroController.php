@@ -141,7 +141,7 @@ class LibroController extends Controller
             'message'=>'El libro se guardó correctamente'
         ));
     }
-    public function delete_evento($libro_id){
+    public function delete_libro($libro_id){
         $libro = Publicacion::find($libro_id);
         if($libro){
             $libro->activo = 0;

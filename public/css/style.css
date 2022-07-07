@@ -470,7 +470,7 @@ p, ol, ul, blockquote {
   box-shadow: 1px 7px 28px 0px rgba(0,0,0,0.64);
   -webkit-box-shadow: 1px 7px 28px 0px rgba(0,0,0,0.64);
   -moz-box-shadow: 1px 7px 28px 0px rgba(0,0,0,0.64);
-  margin-top:4.5em;
+  margin-top:6em;
 }
 
 .ftco-section {
@@ -936,7 +936,7 @@ svg {
 }
 .investigadores-card--info h4{
   font-size: 1.2em;
-  height: 45px;
+  height: 48px;
   overflow: hidden;
 }
 .investigadores .row{
@@ -1276,11 +1276,12 @@ svg {
 .modal-header{
   flex-direction: column;
 }
-.investigadores-card--info h4 {
-  height: 48px;
+/* .investigadores-card--info h4 {
+  font-size: smaller;
+  height: 20px;
   overflow: hidden;
   
-}
+} */
 .evento-container img {
   display: none;
 
@@ -1345,8 +1346,17 @@ svg {
     
   }
   .investigadores-card--info h4 {
-    height: 48px;
+    margin-top: 10px;
+    font-size: small;
+    height: 40px;
     overflow: hidden;
+    
+  }
+  .investigadores-card--info h5 {
+
+    font-size: smaller;
+    font-style: italic;
+
     
   }
   #contact{

@@ -134,11 +134,7 @@
 
                         </div>
                         <div class="investigadores-card--info">
-                            @if(strlen($investigador->nombre.' '.$investigador->apellido)>36)
-                                <h4>{{substr(($investigador->nombre.' '.$investigador->apellido),0,36).'...'}}</h4>
-                            @else
-                                <h4>{{$investigador->nombre.' '.$investigador->apellido}}</h4>
-                            @endif
+                            <h4>{{$investigador->nombre.' '.$investigador->apellido}}</h4>
                             <h5>{{$investigador->grado}}</h5>
                             <h6>Linea de investigación: <i>{{substr($investigador->lineasInves,0,63).'...'}}</i></h6>
                         </div>
@@ -165,7 +161,6 @@
                 </div>
             </div>
         </section>
-        <hr class="divider-w">
         <section class="module" id="publicaciones">
             <div class="container">
                 <div class="row">

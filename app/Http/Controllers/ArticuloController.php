@@ -148,7 +148,7 @@ class ArticuloController extends Controller
             'message'=>'El articulo se guardó correctamente'
         ));
     }
-    public function delete_evento($articulo_id){
+    public function delete_articulo($articulo_id){
         $articulo = Publicacion::find($articulo_id);
         if($articulo){
             $articulo->activo = 0;
