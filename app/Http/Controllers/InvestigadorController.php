@@ -244,7 +244,7 @@ class InvestigadorController extends Controller
         
 
         $investigador->update();
-        return redirect()->route('investigador.indexAdmin')->with(array(
+        return redirect()->route('investigadores.indexAdmin')->with(array(
             'message'=>'El investigador se actualizó correctamente'
         ));
     }

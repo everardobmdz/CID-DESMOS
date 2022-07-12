@@ -122,7 +122,6 @@
             </div>
         </div>
     </div>
-    <hr class="divider-d">
     <footer class="footer bg-dark">
         <div class="container">
             <div class="row">
