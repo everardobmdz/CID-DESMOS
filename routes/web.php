@@ -89,6 +89,7 @@ Route::get('/images/investigadores/{filename}', array(
     'middleware' => 'auth',
     'uses' => 'App\Http\Controllers\InvestigadorController@getImage'
 ));
+
 Route::get('/images/articulos/{filename}', array(
     'as' => 'images',
     'middleware' => 'auth',

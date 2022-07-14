@@ -200,7 +200,7 @@
                                 <div class="video-responsive">
                                     <iframe
                                     
-                                        src="{{'https://www.youtube.com/embed/'.explode('=',$divulgacion->link)[1]}}"
+                                        src="{{'https://www.youtube.com/embed/'.explode('youtu.be/',$divulgacion->link)[1]}}"
                                         title="YouTube video player"
                                         frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
