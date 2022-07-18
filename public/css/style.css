@@ -1012,14 +1012,13 @@ svg {
   overflow: hidden;
   text-align: start;
 }
-.evento-container img{7
+.evento-container img{
   position: absolute;
   border-radius: 10px;
   width: 150px;
   height: 200px;
   top: 14px;
   right: 14px;
-
 }
 .evento-container p{
   max-height: 100px;
