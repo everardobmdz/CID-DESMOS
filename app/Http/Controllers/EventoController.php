@@ -18,8 +18,7 @@ class EventoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        
+    {
         $eventos = Evento::where('activo','=',1)->where('is_solo_noticia','=',0)->orderBy('fecha','desc')->paginate(8);
         return view('eventos.index',compact('eventos'));
     }

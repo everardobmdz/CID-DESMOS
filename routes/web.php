@@ -38,6 +38,11 @@ Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/creditos',function() {
+    return view('creditos');
+})->name('creditos');
+
 Route::get('/', function(){
     return view('welcome');
 });
@@ -145,6 +150,11 @@ Route::get('/delete-usuario/{usuario_id}', array(
     'as' => 'delete-usuario',
     'middleware' => 'auth',
     'uses' => 'App\Http\Controllers\UserController@delete_usuario'
+));
+Route::get('/delete-archivo/{archivo_id}', array(
+    'as' => 'delete-archivo',
+    'middleware' => 'auth',
+    'uses' => 'App\Http\Controllers\ArchivoController@delete_archivo'
 ));
 Route::get('/files/{filename}', array(
     'as' => 'files',

@@ -107,7 +107,6 @@ class DivulgacionController extends Controller
         $validateData = $this->validate($request,[
             'titulo'=>'required',
             'descripcion'=>'required',
-            'link'=>'required',
             'fecha'=>'required'
         ]);
 

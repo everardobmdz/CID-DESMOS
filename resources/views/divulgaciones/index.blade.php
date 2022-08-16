@@ -13,13 +13,20 @@
             <div class="col-sm-6 col-md-4 col-lg-4">
                 <div class="post mb-20">
                     <div class="video-responsive">
-                        <iframe
-                            
-                            src="{{'https://www.youtube.com/embed/'.explode('youtu.be/',$divulgacion->link)[1]}}"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        @if ($divulgacion->link && explode('youtu.be/',$divulgacion->link)[1])
+                            <iframe 
+                                width="560" 
+                                height="315" 
+                                src="{{'https://www.youtube.com/embed/'.explode('youtu.be/',$divulgacion->link)[1]}}"
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+
+                        @else
+                            <img src="{{asset('/images/desmosIcon.png')}}" alt="imagen-divulgacion" style="width: 100%;">
+
+                        @endif
                     </div>
                     <div class="post-header font-alt">
                         <h2 class="post-title"><a href="{{route('divulgaciones.show',$divulgacion->id)}}">{{$divulgacion->titulo}}</a></h2>

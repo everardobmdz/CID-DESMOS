@@ -64,6 +64,32 @@
                         </div>
                         <br>
                         <div class="row align-items-center">
+                            <div class="row align-items-center">
+                            
+                                <div class="col-md-6">
+                                    <label class="font-weight-bold" for="imagen">Imagen</label>
+                                    <div class="custom-file">
+                                        <input name="imagen" type="file" class="custom-file-input" id="customFileLang" accept="image/*"
+                                               lang="es">
+                                        <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="containerImgCreate">
+                                        @if(Storage::disk('images-publicaciones')->has($articulo->image))
+                                            <img id="createInvesPic" src="{{url('/storage/images/publicaciones/'.$articulo->image)}}"/>
+                                        @else
+                                            <img id="createInvesPic" src="../../../public/images/defaultPicture.png">
+                                        @endif
+                                        
+                                    </div>
+                                </div>
+    
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row align-items-center">
                             <div class="col-md-6">
                                 <label class="font-weight-bold" for="files[]">Archivos </label>
                                 <input class="form-control" accept="image/*,.pdf,.doc,.docx,.xlsx" type="file" name="files[]" multiple>

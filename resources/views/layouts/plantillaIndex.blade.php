@@ -121,8 +121,10 @@
     <footer class="footer bg-dark">
         <div class="container-fluid w-75">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 d-flex">
                     <p class="copyright font-alt"><a target="_blank" href="https://www.udg.mx">Universidad de Guadalajara</a></p>
+                    <p class="copyright font-alt border-left ml-3 pl-3"><a href="{{route('creditos')}}">Créditos</a></p>
+
                 </div>
                 
             </div>

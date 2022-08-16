@@ -57,7 +57,7 @@
                     <br>
                     <div class="row align-items-center mb-3">
                         <div class="col-md-5">
-                            <label class="font-weight-bold" for="fecha">Link* </label>
+                            <label class="font-weight-bold" for="fecha">Link </label>
                             <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}">
                         </div>
                         

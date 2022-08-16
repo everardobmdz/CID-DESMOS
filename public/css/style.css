@@ -985,6 +985,9 @@ svg {
   color: #000;
   
 }
+.container-individual-pages h4 {
+  font-size: 1em;
+}
 .container-individual-pages p{
   font-size: 1.2em;
   line-height: 1.7em;

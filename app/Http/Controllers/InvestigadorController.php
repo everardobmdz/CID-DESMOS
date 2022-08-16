@@ -167,7 +167,7 @@ class InvestigadorController extends Controller
         //     $log->acciones = "Borrado";
         //     $log->save();
             //
-            return redirect()->route('investigador.indexAdmin')->with(array(
+            return redirect()->route('investigadores.indexAdmin')->with(array(
                "message" => "El investigador se ha eliminado correctamente"
             ));
         }else{
